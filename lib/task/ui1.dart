@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
     "https://unsplash.com/photos/mEZ3PoFGs_k/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUyNjMxNDA2&force=true&w=640",
     "https://unsplash.com/photos/d1UPkiFd04A/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUyNjMzOTEz&force=true&w=640",
   ];
-  List<String> names = ["aaa seeee","ddd errtt","sss rrtt","tttyyyyy","aaa seeee","ddd errtt","sss rrtt","tttyyyyy"];
+  List<String> names = ["Aaa Seeee","Drdd Errtt","Shghss Rhhsrtt","Tttyyyyy","aaa seeee","ddd errtt","sss rrtt","tttyyyyy"];
 
 
   @override
@@ -79,6 +79,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.amber),
       home: Scaffold(
         backgroundColor: Colors.white,
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.red,
+          unselectedItemColor: Colors.grey,
+          currentIndex: 0,
+          //onTap: selectedfromDatas,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.chat),label: "Chat"),
+            BottomNavigationBarItem(icon: Icon(Icons.movie), label: "Channel"),
+            BottomNavigationBarItem(icon: Icon(Icons.account_box),label: "Profile"),
+
+          ],
+        ),
         appBar: AppBar(
             toolbarHeight: 66,
             elevation: 0,
@@ -142,13 +156,13 @@ class MyApp extends StatelessWidget {
                   itemBuilder: (ctx, index) {
                     return ListTile(
                       title: Text(names[index]),
-                      subtitle: Text('sssss'),
+                      subtitle: Text('Hai ,Hello how are you'),
                       leading: CircleAvatar(
                         radius: 25,
                         backgroundColor: Colors.black45,
                         backgroundImage: NetworkImage(images[index]),
                       ),
-                      trailing: Text('eeee'),
+                      trailing: Text('Today'),
                     );
                   },
                 itemCount: images.length,
