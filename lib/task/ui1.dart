@@ -8,57 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  List<Map> detailsChat = [
-        {
-          "name": "Kddd dddd",
-          "message": "Good Mor",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "Today",
-        },
-        {
-          "name": "Lsss Adwww",
-          "message": "Good Noon",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "YesterDay"
-        },
-        {
-          "name": "Lifff Jddww",
-          "message": "Haiii",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "Monday"
-        },
-        {
-          "name": "Lmmm Ohhhh",
-          "message": "Good Night",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "SunDay"
-        },
-        {
-          "name": "Phhjj Wdff",
-          "message": "Hello",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "Today"
-        },
-        {
-          "name": "Ossss Wgggg",
-          "message": "HRU ?",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "Today"
-        },
-        {
-          "name": "Paaaa Qjjj",
-          "message": "lololo",
-          "photo":
-              "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
-          "day": "Today"
-        },
-  ];
   List<String> images = [
     "https://images.ctfassets.net/hrltx12pl8hq/2fBQ2ReliSGPkXt2ohYcpi/1958e636f2057d577480e1fa0094e3c2/people-shutterstock_316507238.jpg",
     "https://api.time.com/wp-content/uploads/2017/12/joey-degrandis-hsam-memory.jpg?quality=85&w=800",
