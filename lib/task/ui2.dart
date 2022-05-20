@@ -16,12 +16,12 @@ class ProfileApp extends StatelessWidget {
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [Colors.greenAccent, Colors.blueAccent]
+                      colors: [Colors.deepOrange, Colors.yellow]
                   )
               ),
               child: Container(
                 width: double.infinity,
-                height: 350.0,
+                height: 300.0,
                 child: Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +29,7 @@ class ProfileApp extends StatelessWidget {
                     children: <Widget>[
                       CircleAvatar(
                         backgroundImage: NetworkImage(
-                          "https://p16.resso.me/img/tos-alisg-i-0000/693866b2b4cb4e5c907400b86beacb1c~c5_500x500.jpg",
+                          "https://cdn.allthings.how/wp-content/uploads/2020/10/allthings.how-how-to-change-your-profile-picture-on-google-meet-profile-photo-759x427.png?width=600",
                         ),
                         radius: 50.0,
                       ),
@@ -37,7 +37,7 @@ class ProfileApp extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text(
-                        "Sreenath Bhasi",
+                        "Profile Name",
                         style: TextStyle(
                           fontSize: 22.0,
                           color: Colors.white,
@@ -71,7 +71,7 @@ class ProfileApp extends StatelessWidget {
                                       height: 5.0,
                                     ),
                                     Text(
-                                      "5200",
+                                      "52k",
                                       style: TextStyle(
                                         fontSize: 20.0,
                                         color: Colors.pinkAccent,
@@ -121,7 +121,7 @@ class ProfileApp extends StatelessWidget {
                                       height: 5.0,
                                     ),
                                     Text(
-                                      "1300",
+                                      "500",
                                       style: TextStyle(
                                         fontSize: 20.0,
                                         color: Colors.pinkAccent,
@@ -157,7 +157,7 @@ class ProfileApp extends StatelessWidget {
                   SizedBox(
                     height: 10.0,
                   ),
-                  Text('My name is Sreenath Bhasi and I am  a freelance mobile app developper.\n'
+                  Text('My name is Profile Name and I am  a freelance mobile app developper.\n'
                       'if you need any mobile app for your company then contact me for more informations',
                     style: TextStyle(
                       fontSize: 22.0,
@@ -189,7 +189,7 @@ class ProfileApp extends StatelessWidget {
                     gradient: LinearGradient(
                         begin: Alignment.centerRight,
                         end: Alignment.centerLeft,
-                        colors: [Colors.redAccent,Colors.blueAccent]
+                        colors: [Colors.redAccent,Colors.pink.shade200]
                     ),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
