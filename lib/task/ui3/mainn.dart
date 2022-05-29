@@ -39,55 +39,33 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:  GNav(
-            gap: 8,
-            tabMargin: EdgeInsets.all(16),
-            onTabChange: (index){
-              setState(() {
-              _currentSelectedIndex = index;
-
-              });
-            },
-            backgroundColor: Colors.lightGreenAccent,
-            color: Colors.white,
-            activeColor: Colors.lightGreenAccent,
-            tabBackgroundColor: Colors.white,
-            padding: EdgeInsets.all(11),
-            tabs: [
-              GButton(
-                icon: Icons.gamepad_sharp,
-                text: 'home',
-              ),
-              GButton(
-                icon: Icons.search,
-                text: 'Search',
-              ),
-              GButton(
-                icon: Icons.account_box,
-              ),
-            ],
+      bottomNavigationBar: GNav(
+        gap: 8,
+        tabMargin: EdgeInsets.all(16),
+        onTabChange: (index) {
+          setState(() {
+            _currentSelectedIndex = index;
+          });
+        },
+        backgroundColor: Colors.lightGreenAccent,
+        color: Colors.white,
+        activeColor: Colors.lightGreenAccent,
+        tabBackgroundColor: Colors.white,
+        padding: EdgeInsets.all(11),
+        tabs: [
+          GButton(
+            icon: Icons.gamepad_sharp,
+            text: 'home',
           ),
-
-
-      // BottomNavigationBar( type: BottomNavigationBarType.fixed,
-      // backgroundColor: Colors.lightGreenAccent,
-      // selectedItemColor: Colors.white,
-      // unselectedItemColor: Colors.green,
-      //   currentIndex: _currentSelectedIndex,
-      //   onTap: (i){
-      //   setState(() {
-      //     _currentSelectedIndex = i;
-      //   });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(icon: Icon(Icons.holiday_village,),label: "home",),
-      //     BottomNavigationBarItem(icon: Icon(Icons.copy), label: "copy"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.paste),label: "Paste"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.cut),label: 'Cut'),
-      //     BottomNavigationBarItem(icon: Icon(Icons.delete),label: 'Delete'),
-      //
-      //   ],
-      // )
+          GButton(
+            icon: Icons.search,
+            text: 'Search',
+          ),
+          GButton(
+            icon: Icons.account_box,
+          ),
+        ],
+      ),
       body: _page.elementAt(_currentSelectedIndex),
     );
   }
@@ -116,7 +94,11 @@ class ScreenMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Row(children: [Container(child: Text('1'),)]));
+        body: Row(children: [
+      Container(
+        child: Text('1'),
+      )
+    ]));
   }
 }
 
@@ -126,20 +108,174 @@ class SearchResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightGreenAccent,
-          elevation: 0,
-          toolbarHeight: 50,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Search Result'),
-            ],
+      appBar: AppBar(
+        backgroundColor: Colors.lightGreenAccent,
+        elevation: 0,
+        toolbarHeight: 50,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Search Result'),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(color: Colors.lightGreenAccent),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: "Search",
+                  prefixIcon: Icon(Icons.arrow_back),
+                  suffixIcon: Wrap(
+                    runAlignment: WrapAlignment.center,
+                    spacing: 5,
+                    children: [
+                      Icon(Icons.filter_list),
+                      Icon(Icons.search),
+                      Icon(Icons.architecture),
+                    ],
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8, top: 20, bottom: 8),
+            child: Card(
+              elevation: 2,
+              child: Container(
+                margin: EdgeInsets.only(top: 20),
+                width: double.infinity,
+                height: 150,
+                decoration: BoxDecoration(color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Container(
+                        width: 65,
+                          height: 65,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('assets/images/china.jpg'),)
+                          ),
+                         ),
+                      title: Text('Lorem ipsum', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+                      subtitle: Column(children: [
+                        Text("Too much repetition and padding! duh Anyway, that's how I'd do it. Simple"),
+                        Row(children: [
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star_half,color: Colors.lightGreenAccent,),
+                          Text(" 4.5", style: TextStyle(fontSize: 18, color: Colors.black),),
+                          Text('  90\$PH',style: TextStyle(fontSize: 18, color: Colors.black),)
+                        ],
+
+                        ),
+                      ],),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                      SizedBox(
+                        width: 180,
+                        child: TextButton(onPressed: () {}, child: Text('PROFILE',style: TextStyle(color: Colors.black),),
+                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepOrangeAccent.shade100)),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 180,
+                        child: TextButton(onPressed: () {}, child: Text('HIRE',style: TextStyle(color: Colors.white),),
+                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.lightGreenAccent)),
+                        ),
+                      )
+
+                    ],)
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8, bottom: 8),
+            child: Card(
+              elevation: 2,
+              child: Container(
+                margin: EdgeInsets.only(top: 20),
+                width: double.infinity,
+                height: 150,
+                decoration: BoxDecoration(color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Container(
+                        width: 65,
+                        height: 65,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('assets/images/usa.jpg'),)
+                        ),
+                      ),
+                      title: Text('Lorem ipsum', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+                      subtitle: Column(children: [
+                        Text("Too much repetition and padding! duh Anyway, that's how I'd do it. Simple"),
+                        Row(children: [
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star,color: Colors.lightGreenAccent,),
+                          Icon(Icons.star_half,color: Colors.lightGreenAccent,),
+                          Text(" 4.5", style: TextStyle(fontSize: 18, color: Colors.black),),
+                          Text('  90\$PH',style: TextStyle(fontSize: 18, color: Colors.black),)
+                        ],
+
+                        ),
+                      ],),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          width: 180,
+                          child: TextButton(onPressed: () {}, child: Text('PROFILE',style: TextStyle(color: Colors.black),),
+                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepOrangeAccent.shade100)),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 180,
+                          child: TextButton(onPressed: () {}, child: Text('HIRE',style: TextStyle(color: Colors.white),),
+                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.lightGreenAccent)),
+                          ),
+                        )
+
+                      ],)
+                  ],
+                ),
+              ),
+            ),
           ),
 
-        ),
-
-        body: Center(child: Container(child: Text('2'),)));
+        ],
+      ),
+    );
   }
 }
 
@@ -165,8 +301,97 @@ class SignUp extends StatelessWidget {
               Text('Sign Up'),
             ],
           ),
-
         ),
-        body: Center(child: Container(child: Text('3'),)));
+        body: Padding(
+          padding: const EdgeInsets.only(top: 40),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                      ),
+                    ],
+                    color: Colors.lightGreenAccent,
+                    borderRadius: BorderRadius.circular(10)),
+                width: double.infinity,
+                height: 130,
+                alignment: Alignment.center,
+                child: Text("i,m looking for a teacher",
+                    style: TextStyle(color: Colors.white)),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                      ),
+                    ]),
+                width: double.infinity,
+                height: 130,
+                alignment: Alignment.center,
+                child: Text("i,m looking for a teacher",
+                    style: TextStyle(color: Colors.black)),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                      ),
+                    ]),
+                width: double.infinity,
+                height: 130,
+                alignment: Alignment.center,
+                child: Text("i,m looking for a teacher",
+                    style: TextStyle(color: Colors.black)),
+              ),
+            ],
+          ),
+        ));
   }
 }
